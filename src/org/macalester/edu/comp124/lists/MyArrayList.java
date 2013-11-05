@@ -64,6 +64,10 @@ public class MyArrayList<E> {
 	 * @param elem
 	 */
 	public void add(E elem) {
+        if (currentSize == elements.length){
+            expandSize();
+        }
+        elements[currentSize++] = elem;
 	}
 
 	/**
@@ -78,6 +82,14 @@ public class MyArrayList<E> {
 	 * @param elem
 	 */
 	public void add(int index, E elem) {
+        expandSize();
+        for (int i = index; i <= currentSize+1; i++){
+            //for (int j = 0; j < currentSize+1; j++){
+                elements[i+1] = elements[i];
+
+        }
+        currentSize++;
+        elements[index] = elem;
 	}
 	
 	/**
@@ -88,7 +100,11 @@ public class MyArrayList<E> {
 	 * This will be useful for both versions of add.
 	 */
 	private void expandSize() {
-		
+        E[] newElements = newArrayOfE(2*elements.length);
+        for (int i = 0; i < elements.length; i++){
+            newElements[i] = elements[i];
+        }
+        elements = newElements;
 	}
 	
 	/**

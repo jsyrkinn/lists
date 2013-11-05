@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class TestList {
 	/* Declare a list of Strings here named list */
-	MyLinkedList<String> list = new MyLinkedList<String>();	
+	MyLinkedList<String> list = new MyLinkedList<String>();
 
 	public void prepareList() {
 		list.clear();
@@ -24,7 +24,7 @@ public class TestList {
 		assertEquals(list.get(1), "bar");
 		assertEquals(list.get(2), "baz");
 	}
-	
+
 	/**
 	 * Tests that appending at the end of a list works.
 	 */
@@ -37,7 +37,7 @@ public class TestList {
 		assertEquals(list.size(), 4);
 		assertEquals(list.get(3), "foobar");
 	}
-	
+
 	/**
 	 * Tests that inserting into the middle of a list works.
 	 */
@@ -51,17 +51,17 @@ public class TestList {
 		assertEquals(list.get(1), "foobar");
 		assertEquals(list.get(3), "baz");
 	}
-	
-	/**
-	 * Tests that expanding a list works.
-	 */
-    @Test
-	public void testAdd3() {
-        prepareList();
-		for (int i = 0; i < 100; i++) {
-			list.add("foo" + i);
-		}
-		assertEquals(list.size(), 103);
-		assertEquals(list.get(102), "foo99");
-	}
+
+//	/**
+//	 * Tests that expanding a list works.
+//	 */
+//    @Test
+//	public void testAdd3() {
+//        prepareList();
+//		for (int i = 0; i < 100; i++) {
+//			list.add("foo" + i);
+//		}
+//		assertEquals(list.size(), 103);
+//		assertEquals(list.get(102), "foo99");
+//	}
 }
